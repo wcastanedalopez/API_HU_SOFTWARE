@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import indexRoutes from './indexRoutes';
+import booksController from '../controllers/booksController';
 
 class BookRoutes {
     public router: Router = Router();
@@ -8,7 +9,7 @@ class BookRoutes {
         this.config();
     }
     config():void {
-        this.router.get('/', (req, res) => res.send('Books'));
+        this.router.get('/', booksController.index);
     }
 }
 
